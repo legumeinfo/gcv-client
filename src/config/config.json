@@ -49,10 +49,6 @@
         "scriptUrl": "https://cdn.rawgit.com/legumeinfo/lis-taxon-symbology/01e02d99/dist/bundle.js",
         "functionName": "taxonChroma.get"
       },
-      "microSearch": {
-        "type": "POST",
-        "url": "http://localhost:8080/micro-synteny-search"
-      },
       "geneLinks": {
         "type": "GET",
         "url": "https://legumeinfo.org/gene_links/"
@@ -61,25 +57,29 @@
         "type": "GET",
         "url": "http://legumeinfo.org/chado_gene_phylotree_v2?family="
       },
+      "microSearch": {
+        "type": "GRPC",
+        "url": "http://localhost/gcv/micro-synteny-search/grpc-web"
+      },
       "chromosome": {
-        "type": "GET",
-        "url": "http://localhost:8080/chromosome"
+        "type": "GRPC",
+        "url": "http://localhost/gcv/chromosome/grpc-web"
       },
       "genes": {
-        "type": "POST",
-        "url": "http://localhost:8080/genes"
+        "type": "GRPC",
+        "url": "http://localhost/gcv/genes/grpc-web"
       },
       "blocks": {
-        "type": "POST",
-        "url": "http://localhost:8080/macro-synteny-blocks"
-      },
-      "search": {
-        "type": "GET",
-        "url": "http://localhost:8080/search"
+        "type": "GRPC",
+        "url": "http://localhost/gcv/macro-synteny-blocks/grpc-web"
       },
       "region": {
-        "type": "GET",
-        "url": "http://localhost:8080/chromosome-region"
+        "type": "GRPC",
+        "url": "http://localhost/gcv/chromosome-region/grpc-web"
+      },
+      "search": {
+        "type": "GRPC",
+        "url": "http://localhost/gcv/search/grpc-web"
       }
     }
   ]

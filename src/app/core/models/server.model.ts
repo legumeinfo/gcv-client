@@ -1,8 +1,9 @@
 export const GET = 'GET';
 export const POST = 'POST';
+export const GRPC = 'GRPC';
 
 export class Request {
-  type: 'GET' | 'POST';
+  type: 'GET' | 'POST' | 'GRPC';
   url: string;
 }
 
