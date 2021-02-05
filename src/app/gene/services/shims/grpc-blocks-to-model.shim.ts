@@ -10,7 +10,14 @@ export const grpcBlocksToModel =
       chromosomeSource,
       chromosomeGenus: genus,
       chromosomeSpecies: species,
-      blocks: blocksList,
+      blocks: blocksList.map((b) => {
+        const {optionalmetricsList, ...bRest} = b;
+        const block = {...bRest};
+        if (optionalmetricsList.length > 0) {
+          block.optionalMetrics = optionalmetricsList;
+        }
+        return block;
+      }),
       ...rest
     };
   return blocks as PairwiseBlocks;

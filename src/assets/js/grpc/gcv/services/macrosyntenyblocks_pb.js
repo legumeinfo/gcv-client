@@ -64,7 +64,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.gcv.services.MacroSyntenyBlocksComputeRequest.repeatedFields_ = [1,5];
+proto.gcv.services.MacroSyntenyBlocksComputeRequest.repeatedFields_ = [1,5,6];
 
 
 
@@ -101,7 +101,8 @@ proto.gcv.services.MacroSyntenyBlocksComputeRequest.toObject = function(includeI
     matched: jspb.Message.getFieldWithDefault(msg, 2, 0),
     intermediate: jspb.Message.getFieldWithDefault(msg, 3, 0),
     mask: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    targetsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+    targetsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    optionalmetricsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -157,6 +158,10 @@ proto.gcv.services.MacroSyntenyBlocksComputeRequest.deserializeBinaryFromReader 
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.addTargets(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addOptionalmetrics(value);
       break;
     default:
       reader.skipField();
@@ -219,6 +224,13 @@ proto.gcv.services.MacroSyntenyBlocksComputeRequest.serializeBinaryToWriter = fu
   if (f.length > 0) {
     writer.writeRepeatedString(
       5,
+      f
+    );
+  }
+  f = message.getOptionalmetricsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
       f
     );
   }
@@ -368,6 +380,43 @@ proto.gcv.services.MacroSyntenyBlocksComputeRequest.prototype.addTargets = funct
  */
 proto.gcv.services.MacroSyntenyBlocksComputeRequest.prototype.clearTargetsList = function() {
   return this.setTargetsList([]);
+};
+
+
+/**
+ * repeated string optionalMetrics = 6;
+ * @return {!Array<string>}
+ */
+proto.gcv.services.MacroSyntenyBlocksComputeRequest.prototype.getOptionalmetricsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.gcv.services.MacroSyntenyBlocksComputeRequest} returns this
+ */
+proto.gcv.services.MacroSyntenyBlocksComputeRequest.prototype.setOptionalmetricsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.gcv.services.MacroSyntenyBlocksComputeRequest} returns this
+ */
+proto.gcv.services.MacroSyntenyBlocksComputeRequest.prototype.addOptionalmetrics = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.gcv.services.MacroSyntenyBlocksComputeRequest} returns this
+ */
+proto.gcv.services.MacroSyntenyBlocksComputeRequest.prototype.clearOptionalmetricsList = function() {
+  return this.setOptionalmetricsList([]);
 };
 
 

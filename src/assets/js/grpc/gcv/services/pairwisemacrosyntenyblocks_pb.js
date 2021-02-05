@@ -64,7 +64,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.repeatedFields_ = [1];
+proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.repeatedFields_ = [1,6];
 
 
 
@@ -101,7 +101,8 @@ proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.toObject = function(
     target: jspb.Message.getFieldWithDefault(msg, 2, ""),
     matched: jspb.Message.getFieldWithDefault(msg, 3, 0),
     intermediate: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    mask: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    mask: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    optionalmetricsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -157,6 +158,10 @@ proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.deserializeBinaryFro
     case 5:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setMask(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addOptionalmetrics(value);
       break;
     default:
       reader.skipField();
@@ -219,6 +224,13 @@ proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.serializeBinaryToWri
   if (f != null) {
     writer.writeUint32(
       5,
+      f
+    );
+  }
+  f = message.getOptionalmetricsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
       f
     );
   }
@@ -349,6 +361,43 @@ proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.prototype.clearMask 
  */
 proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.prototype.hasMask = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated string optionalMetrics = 6;
+ * @return {!Array<string>}
+ */
+proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.prototype.getOptionalmetricsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest} returns this
+ */
+proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.prototype.setOptionalmetricsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest} returns this
+ */
+proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.prototype.addOptionalmetrics = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest} returns this
+ */
+proto.gcv.services.PairwiseMacroSyntenyBlocksComputeRequest.prototype.clearOptionalmetricsList = function() {
+  return this.setOptionalmetricsList([]);
 };
 
 

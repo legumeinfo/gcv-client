@@ -21,6 +21,11 @@ export class PairwiseMacroSyntenyBlocksComputeRequest extends jspb.Message {
   getMask(): number;
   setMask(value: number): PairwiseMacroSyntenyBlocksComputeRequest;
 
+  getOptionalmetricsList(): Array<string>;
+  setOptionalmetricsList(value: Array<string>): PairwiseMacroSyntenyBlocksComputeRequest;
+  clearOptionalmetricsList(): PairwiseMacroSyntenyBlocksComputeRequest;
+  addOptionalmetrics(value: string, index?: number): PairwiseMacroSyntenyBlocksComputeRequest;
+
   getMaskCase(): PairwiseMacroSyntenyBlocksComputeRequest.MaskCase;
 
   serializeBinary(): Uint8Array;
@@ -38,6 +43,7 @@ export namespace PairwiseMacroSyntenyBlocksComputeRequest {
     matched: number,
     intermediate: number,
     mask: number,
+    optionalmetricsList: Array<string>,
   }
 
   export enum MaskCase { 

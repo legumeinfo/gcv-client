@@ -46,14 +46,14 @@ export class PairwiseBlocksService extends HttpService {
     targets: string[] = []):
   Observable<PairwiseBlocks[]> {
     const request = AppConfig.getServerRequest(serverID, 'blocks');
-    const body = {
-      chromosome: chromosome.families,
-      intermediate: blockParams.bintermediate,
-      mask: blockParams.bmask,
-      matched: blockParams.bmatched,
-      targets,
-    };
     if (request.type === GET || request.type === POST) {
+      const body = {
+        chromosome: chromosome.families,
+        intermediate: blockParams.bintermediate,
+        mask: blockParams.bmask,
+        matched: blockParams.bmatched,
+        targets
+      };
       return this._makeHttpRequest<{blocks: RawPairwiseBlocks[]}>(request, body).pipe(
         map((result) => {
           const blocks = result.blocks.map((block) => {

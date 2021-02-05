@@ -50,6 +50,11 @@ export class Block extends jspb.Message {
   getOrientation(): string;
   setOrientation(value: string): Block;
 
+  getOptionalmetricsList(): Array<number>;
+  setOptionalmetricsList(value: Array<number>): Block;
+  clearOptionalmetricsList(): Block;
+  addOptionalmetrics(value: number, index?: number): Block;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Block.AsObject;
   static toObject(includeInstance: boolean, msg: Block): Block.AsObject;
@@ -65,6 +70,7 @@ export namespace Block {
     fmin: number,
     fmax: number,
     orientation: string,
+    optionalmetricsList: Array<number>,
   }
 }
 

@@ -46,7 +46,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.gcv.structures.Block = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.gcv.structures.Block.repeatedFields_, null);
 };
 goog.inherits(proto.gcv.structures.Block, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -307,6 +307,13 @@ proto.gcv.structures.Blocks.prototype.clearBlocksList = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.gcv.structures.Block.repeatedFields_ = [6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -342,7 +349,8 @@ proto.gcv.structures.Block.toObject = function(includeInstance, msg) {
     j: jspb.Message.getFieldWithDefault(msg, 2, 0),
     fmin: jspb.Message.getFieldWithDefault(msg, 3, 0),
     fmax: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    orientation: jspb.Message.getFieldWithDefault(msg, 5, "")
+    orientation: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    optionalmetricsList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -398,6 +406,10 @@ proto.gcv.structures.Block.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setOrientation(value);
+      break;
+    case 6:
+      var value = /** @type {!Array<number>} */ (reader.readPackedFloat());
+      msg.setOptionalmetricsList(value);
       break;
     default:
       reader.skipField();
@@ -460,6 +472,13 @@ proto.gcv.structures.Block.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getOptionalmetricsList();
+  if (f.length > 0) {
+    writer.writePackedFloat(
+      6,
       f
     );
   }
@@ -553,6 +572,43 @@ proto.gcv.structures.Block.prototype.getOrientation = function() {
  */
 proto.gcv.structures.Block.prototype.setOrientation = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * repeated float optionalMetrics = 6;
+ * @return {!Array<number>}
+ */
+proto.gcv.structures.Block.prototype.getOptionalmetricsList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 6));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.gcv.structures.Block} returns this
+ */
+proto.gcv.structures.Block.prototype.setOptionalmetricsList = function(value) {
+  return jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.gcv.structures.Block} returns this
+ */
+proto.gcv.structures.Block.prototype.addOptionalmetrics = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.gcv.structures.Block} returns this
+ */
+proto.gcv.structures.Block.prototype.clearOptionalmetricsList = function() {
+  return this.setOptionalmetricsList([]);
 };
 
 

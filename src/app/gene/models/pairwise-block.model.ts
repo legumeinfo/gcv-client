@@ -4,4 +4,5 @@ export class PairwiseBlock {
   j: number;
   fmin: number;
   fmax: number;
+  optionalMetrics?: number[];
 }

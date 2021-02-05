@@ -23,6 +23,11 @@ export class MacroSyntenyBlocksComputeRequest extends jspb.Message {
   clearTargetsList(): MacroSyntenyBlocksComputeRequest;
   addTargets(value: string, index?: number): MacroSyntenyBlocksComputeRequest;
 
+  getOptionalmetricsList(): Array<string>;
+  setOptionalmetricsList(value: Array<string>): MacroSyntenyBlocksComputeRequest;
+  clearOptionalmetricsList(): MacroSyntenyBlocksComputeRequest;
+  addOptionalmetrics(value: string, index?: number): MacroSyntenyBlocksComputeRequest;
+
   getMaskCase(): MacroSyntenyBlocksComputeRequest.MaskCase;
 
   serializeBinary(): Uint8Array;
@@ -40,6 +45,7 @@ export namespace MacroSyntenyBlocksComputeRequest {
     intermediate: number,
     mask: number,
     targetsList: Array<string>,
+    optionalmetricsList: Array<string>,
   }
 
   export enum MaskCase { 
